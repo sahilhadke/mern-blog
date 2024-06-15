@@ -6,6 +6,9 @@ import SingUp from "./pages/Signup"
 import Projects from "./pages/Projects"
 import Header from "./components/Header"
 import FooterComponenent from "./components/FooterComponenent"
+import PrivateRoute from "./components/PrivateRoute"
+import Dashboard from "./pages/Dashboard"
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -15,6 +18,9 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/home" element={<Home />} />
         <Route path="/sign-in" element={<SignIn />} />
+        <Route element={<PrivateRoute />} >
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Route>
         <Route path="/sign-up" element={<SingUp />} />
         <Route path="/projects" element={<Projects />} />
       </Routes>
