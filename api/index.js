@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import userRoutes from './routes/user.route.js'
 import authRoutes from './routes/auth.route.js'
+import cookieParser from 'cookie-parser'
 
 // configure dotenv to use .env file
 dotenv.config()
@@ -16,6 +17,8 @@ const app = express()
 
 // middleware
 app.use(express.json())
+app.use(cookieParser())
+
 app.get('/', (req, res) => {
   res.send('Hello World!!!')
 })
