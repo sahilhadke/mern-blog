@@ -15,12 +15,13 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
 
 const app = express()
 
+
 // middleware
 app.use(express.json())
 app.use(cookieParser())
 
 app.get('/', (req, res) => {
-  res.send('Hello World!!!')
+  res.send('Hello World!')
 })
 app.use('/api/users', userRoutes)
 app.use('/api/auth', authRoutes)
